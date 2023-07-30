@@ -1,0 +1,15 @@
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    env:
+      NO_COLOR: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: NPM install
+        run: |
+          ./nvmw npm install
+          ./nvmw npm run cypress:ci -- --browser electron --headed ${{ inputs.extraParameters }}
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
