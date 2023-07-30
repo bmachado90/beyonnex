@@ -19,7 +19,6 @@ jobs:
         uses: actions/checkout@v3
       - name: NPM install
         run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-          nvm install node
-          nvm npm install
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt install nodejs
           nvm npm run cypress:ci -- --browser electron
