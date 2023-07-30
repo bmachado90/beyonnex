@@ -32,7 +32,7 @@ And that’s it! Test should run with those commands.
   3.5. User lands in checkout page and check that current url contains /cart
   3.6. User clicks on _Pay with Card_ button
   3.7. User fills the credit card details
-  3.8. User lands in confirmation page and check that current url contains /confirmation
+  3.8. User lands in confirmation page and check that current url contains "/confirmation"
   3.9. User checks that there is a "PAYMENT SUCCESS" header and "Your payment was successful. You should receive a follow-up call from our sales team." subheader
 
 4. If current temperature is above 34 degrees user clicks on _Buy sunscreen_ button
