@@ -20,5 +20,5 @@ jobs:
       - name: NPM install
         run: |
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-          nvm npm install
+          nvm install node
           nvm npm run cypress:ci -- --browser electron
