@@ -11,7 +11,7 @@ on:
       - master
 jobs:
   cypress:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       NO_COLOR: "1"
     steps:
@@ -19,6 +19,5 @@ jobs:
         uses: actions/checkout@v3
       - name: NPM install
         run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-          sudo apt install nodejs
-          nvm npm run cypress:ci -- --browser electron
+          ./nvmw npm install
+          ./nvmw npm run cypress:ci -- --browser electron
