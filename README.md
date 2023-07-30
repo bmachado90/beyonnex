@@ -25,8 +25,7 @@ And that’s it! Test should run with those commands.
 1. User goes to weathershopper website (https://weathershopper.pythonanywhere.com/)
 2. User check current temperature
 3. If current temperature is below 19 degrees user clicks on _Buy moisturizers_ button
-   
-  3.1. User lands in moisturizees page and check that current url contains /moisturizer
+   3.1. User lands in moisturizees page and check that current url contains /moisturizer
    
   3.2. User adds two moisturizers to the cart. First, selects the least expensive moisturizer that contains Aloe. Then selects the least expensive moisturizer that contains almond
   
