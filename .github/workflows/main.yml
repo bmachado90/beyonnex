@@ -1,3 +1,14 @@
+on:
+  workflow_dispatch:
+    inputs:
+      extraParameters:
+        description: "Extra Cypress parameters"
+        required: false
+        default: ""
+        type: string
+  push:
+    branches:
+      - master
 jobs:
   cypress:
     runs-on: ubuntu-latest
@@ -10,6 +21,3 @@ jobs:
         run: |
           ./nvmw npm install
           ./nvmw npm run cypress:ci -- --browser electron
-        env:
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
