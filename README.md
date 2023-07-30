@@ -3,7 +3,7 @@
 ## Solution
 
 - Language/Framework: Cypress + TS
-- Solution must run on Docket
+- Solution must run on Docker
 
 ### Setup
 
@@ -20,6 +20,8 @@ If you want to run the test using cypress test runner you can type:
 On the other hand, if you want to run the test using the console you can type: `npm run cy:run`
 
 And that’s it! Test should run with those commands.
+
+I´m using GITHUB Action to run the code , you can go to TAB Action click on ".github/workflows/main.yml" then click on RUN WORKFLOW and the code will Run throw a Docker image using Windows
 
 ### Test case: Check the temperature and buy the according product
 1. User goes to weathershopper website (https://weathershopper.pythonanywhere.com/)
