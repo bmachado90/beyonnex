@@ -1,25 +1,9 @@
 # weather-shopper
 
-## Evaluation criteria
-Define and write one manual end-to-end test cases which will be automated in next
-steps.
-
-These are some aspects to pay particular attention to:
-- You can use any language/framework you are most comfortable with.
-- Your solution must be independent of a particular OS.
-- Your solution must support running tests in parallel.
-- Your solution must support two different browsers.
-- You must provide instructions on how to run the tests and any installation prerequisites.
-- The tests in the provided solution must pass consistently and follow the initial steps.
-
 ## Solution
 
 - Language/Framework: Cypress + TS
-- Solution must be independent of a particular OS: Cypress can run across different OS and in CI pipelines
-- Solution must support running tests in parallel: Currently, Cypress does not have a native method to run tests in parallel for local machine. There is a way to run tests in parallel but documentation recommends to use a CI server and a paid Cypress dashboard service.
-- Solution must support two different browsers: In order to run the test in different browsers you have to install those browsers in your local machine. Cypress automatically recognize those browsers and let you select wich one will use when running the test.
-![](cypress/images/browsers.png)
-Note: since web application has an iframe embedded in the checkout process it has been required to add `"chromeWebSecurity": false` configuration to allow browser JavaScript from one domain to access elements in another domain, this configuration will not work on firefox browser.
+- Solution must run on Docket
 
 ### Setup
 
@@ -37,16 +21,29 @@ On the other hand, if you want to run the test using the console you can type: `
 
 And that’s it! Test should run with those commands.
 
-### Test case: User is able to buy Moisturizers
+### Test case: Check the temperature and buy the according product
 1. User goes to weathershopper website (https://weathershopper.pythonanywhere.com/)
 2. User check current temperature
 3. If current temperature is below 19 degrees user clicks on _Buy moisturizers_ button
-4. User lands in moisturizees page and check that current url contains /moisturizer
-5. User adds two moisturizers to the cart. First, selects the least expensive moisturizer that contains Aloe. Then selects the least expensive moisturizer that contains almond
-6. After selecting the proper moisturizers user checks that cart contains 2 items
-7. User clicks on _cart_ button
-8. User lands in checkout page and check that current url contains /cart
-9. User clicks on _Pay with Card_ button
-10. User fills the credit card details
-11. User lands in confirmation page and check that current url contains /confirmation
-12. User checks that there is a "PAYMENT SUCCESS" header and "Your payment was successful. You should receive a follow-up call from our sales team." subheader.
+  3.1. User lands in moisturizees page and check that current url contains /moisturizer
+  3.2. User adds two moisturizers to the cart. First, selects the least expensive moisturizer that contains Aloe. Then selects the least expensive moisturizer that contains almond
+  3.3. After selecting the proper moisturizers user checks that cart contains 2 items
+  3.4. User clicks on _cart_ button
+  3.5. User lands in checkout page and check that current url contains /cart
+  3.6. User clicks on _Pay with Card_ button
+  3.7. User fills the credit card details
+  3.8. User lands in confirmation page and check that current url contains /confirmation
+  3.9. User checks that there is a "PAYMENT SUCCESS" header and "Your payment was successful. You should receive a follow-up call from our sales team." subheader
+
+4. If current temperature is above 34 degrees user clicks on _Buy sunscreen_ button
+  6. User lands in sunscreen page and check that current url contains /sunscreen
+  7. User adds two sunscreens to the cart. First, selects the least expensive sunscreen that is SPF-50.. Then selects the least expensive sunscreen that is SPF-30
+  8. After selecting the proper sunscreens user checks that cart contains 2 items
+  9. User clicks on _cart_ button
+  10. User lands in checkout page and check that current url contains /cart
+  11. User clicks on _Pay with Card_ button
+  12. User fills the credit card details
+  13. User lands in confirmation page and check that current url contains /confirmation
+  14. User checks that there is a "PAYMENT SUCCESS" header and "Your payment was successful. You should receive a follow-up call from our sales team." subheader.
+
+5.If the temperature is beetween 19 and 34 degrees the user remains in the same homepage. 
