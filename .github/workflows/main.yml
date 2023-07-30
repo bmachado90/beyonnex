@@ -21,4 +21,5 @@ jobs:
         run: |
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
           nvm install node
+          nvm npm install
           nvm npm run cypress:ci -- --browser electron
